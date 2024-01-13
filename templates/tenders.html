@@ -1,0 +1,46 @@
+<!-- cleaning_company/templates/cleaning_company/tenders.html -->
+{% extends 'base.html' %}
+
+{% block title %}Tenders | CHLOE{% endblock %}
+{% load static %}
+{% block content %}
+  <style>
+    /* Your existing styles here */
+
+    #tenders .tender-item {
+      margin-bottom: 30px;
+    }
+
+    #tenders .img-fluid {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    #tenders .highlighted-details {
+      background-color: #ffffcc; /* Choose your preferred highlight color */
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+
+
+  <section id="tenders">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 30px; margin-bottom: 300px;">
+          {% for tender_item in tenders_list %}
+            <div class="tender-item">
+              <h3 style="text-align: center; text-decoration: underline; margin-bottom: 40px;">{{ tender_item.title }}</h3>
+              {% if tender_item.photo %}
+                <img src="{{ tender_item.photo.url }}" alt="{{ tender_item.title }}" class="img-fluid mb-3" style="margin-left: 330px;">
+              {% endif %}
+              <p class="highlighted-details">{{ tender_item.details }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

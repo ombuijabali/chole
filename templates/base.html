@@ -1,0 +1,249 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CHLOE Cleaners{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add this in the <head> section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logo.png' %}">
+    <!-- Your custom CSS styles -->
+    <style>
+        body {            
+            font-style: normal;
+            font-weight: 300;
+            font-family-sans-serif: "Roboto",sans-serif;
+            font-family-monospace: SFMono-Regular,Menlo,Monaco
+            ,Consolas,"Liberation Mono","Courier New",monospace;
+        
+        }
+        /* Move nav links to the right and add margin */
+        .navbar-nav {
+            margin-left: auto;
+            margin-right: 150px;
+            height: 60px;
+            margin-top: 30px;
+        }
+
+        /* Optional: Add some spacing between the navbar brand and links */
+        .navbar-brand, .navbar-rnav a {
+            margin-right: 15px;
+            margin-top: 30px;
+        }
+
+        .navbar-nav .nav-item:hover a {
+          color: #1ca9c9; /* Set your desired hover text color */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="height: 60px;">
+        <a class="navbar-brand" style="margin-bottom: 20px; font-size: 30px; font-weight: bold; font-style: italic; color: #00BFFF;" href="{% url 'home' %}">Keeping It Clean</a>
+        <div class="container">
+            <!-- Your navigation content goes here -->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto" style="margin-top: 45px;">
+                    <!-- Your existing navigation items -->
+
+                    <!-- Social media icons -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-facebook" style="color: blue; font-size: 22px;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-twitter" style="color: #00BFFF; font-size: 22px;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-instagram" style="color: red; font-size: 22px;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-linkedin" style="color: blue; font-size: 22px;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-youtube" style="color: red; font-size: 22px;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}" class="btn btn-outline-success btn-sm" style="margin-left: 30px;">Staff Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info dynamic-navbar" style="margin-bottom: 10px;">
+        <a class="navbar-brand" style="margin-bottom: 20px; font-weight: bold;font-style: italic; margin-left: 250px; color: black; font-weight: bold;" href="{% url 'home' %}">CHLOE
+            <img src="{% static 'logo.png' %}" alt="Chole Cleaners Logo" style="max-height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}" style="color: black; font-weight: bolder;">HOME</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black; font-weight: bolder;">
+                      ABOUT US
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                      <a class="dropdown-item" href="{% url 'aboutus' %}">General Details</a>
+                      <a class="dropdown-item" href="{% url 'aboutus' %}#who-we-are">Who We Are</a>
+                      <a class="dropdown-item" href="{% url 'aboutus' %}#board-of-directors">Board of Directors</a>
+                      <a class="dropdown-item" href="{% url 'aboutus' %}#areas-of-service">Areas of Service Delivery</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black; font-weight: bolder;">
+                        SERVICES
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                      <a class="dropdown-item" href="{% url 'services' %}">General Details</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#commercial_cleaning">Commercial Cleaning</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#carpet_cleaning">Carpet Cleaning</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#general_office_cleaning">General Office Cleaning</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#restroom_sanitation">Restroom Sanitation</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#floor_maintenance">Floor Maintenance</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#furniture_cleaning">Furniture Cleaning</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#exterior_cleaning">Exterior Cleaning</a>
+                      <a class="dropdown-item" href="{% url 'services' %}#janitorial_supplies">Janitorial Supplies</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'careers' %}" style="color: black; font-weight: bolder;">CAREERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tenders' %}" style="color: black; font-weight: bolder;">TENDERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blogs' %}" style="color: black; font-weight: bolder;">BLOG POSTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}" style="color: black; font-weight: bolder;">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+
+   <footer class="bg-info text-light py-3" style="margin-top: 20px;">
+        <div class="container">
+             <a class="navbar-brand" style="margin-bottom: 20px;" href="{% url 'home' %}">
+                <img src="{% static 'logos.jpg' %}" alt="Chole Cleaners Logo" style="max-height: 40px;">
+            </a>
+            <div class="row">
+                <!-- Contact Info -->
+                <div class="col-md-4">
+                    <h4>Contact Info</h4>
+                    <p>We are the leaders in providing Integrated Facilities Management Solutions.</p>
+                    <p>QUALITY SERVICES, ALL DAY, EVERY DAY!</p>
+                    <p>GateWay Mall, Along Mombasa road.<br> Nairobi, Kenya</p>
+                    <p>+254 (7) 28-309-224, +254 (7) 12-345-678</p>          
+                    <p>info@cholecleaners.com</p>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div class="col-md-4">
+                    <h4>Quick Navigation</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'aboutus' %}" style="color: white">About Chole Cleaners LTD</a></li>
+                        <li><a href="{% url 'aboutus' %}" style="color: white">Board of Directors</a></li>
+                        <li><a href="{% url 'contact' %}" style="color: white">Contact Us</a></li>
+                        <li><a href="{% url 'careers' %}" style="color: white">Careers</a></li>
+                        <li><a href="{% url 'tenders' %}" style="color: white">Tenders</a></li>
+                        <li><a href="{% url 'blogs' %}" style="color: white">Blog</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-md-4">
+                    <h4>Services</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'services' %}" style="color: white">Commercial Services</a></li>
+                        <li><a href="{% url 'services' %}" style="color: white">General Office Cleaning</a></li>
+                        <li><a href="{% url 'services' %}" style="color: white">Carpet Cleaning</a></li>
+                        <li><a href="{% url 'services' %}" style="color: white">Restroom Sanitation</a></li>
+                        <li><a href="{% url 'services' %}" style="color: white">Floor Maintenance</a></li>
+                        <li><a href="{% url 'services' %}" style="color: white">Furniture Cleaning</a></li>
+                        <li><a href="{% url 'services' %}" style="color: white">Exterior Cleaning</a></li>
+                        <li><a href="{% url 'services' %}" style="color: white">Janitorial Supplies</a></li>                        
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Horizontal Line -->
+            <hr style="border-top: 1px solid #fff;">
+
+            <div class="row">
+                <!-- Copyright and Social Media Icons -->
+                <div class="col-md-6">
+                    <p style="margin-top: 10px;">&copy; {% now "Y" %} Chole Cleaners. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Social media icons -->
+                    <ul class="list-inline d-flex justify-content-end">
+                        <li class="list-inline-item">
+                            <a class="nav-link" href="#"><i class="fab fa-facebook" style="color: blue; font-size: 25px;"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="nav-link" href="#"><i class="fab fa-twitter" style="color: lightblue; font-size: 25px;"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="nav-link" href="#"><i class="fab fa-instagram" style="color: red; font-size: 25px;"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="nav-link" href="#"><i class="fab fa-linkedin" style="color: blue; font-size: 25px;"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="nav-link" href="#"><i class="fab fa-youtube" style="color: red; font-size: 25px;"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (optional, if you need Bootstrap JavaScript features) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Add your custom scripts here
+        $(document).ready(function() {
+            var navbars = $(".dynamic-navbar");
+            var sticky = navbars.offset().top;
+
+            $(window).scroll(function() {
+                if (window.pageYOffset >= sticky) {
+                    navbars.addClass("fixed-top");
+                } else {
+                    navbars.removeClass("fixed-top");
+                }
+            });
+
+            $('.nav-item.dropdown').hover(function() {
+                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300);
+            }, function() {
+                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300);
+            });
+        });
+    </script>
+
+
+</body>
+</html>

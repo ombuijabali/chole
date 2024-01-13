@@ -1,0 +1,74 @@
+<!-- cleaning_company/templates/cleaning_company/careers.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Careers | CHLOE{% endblock %}
+
+{% block content %}
+<style>
+  .equal-size-logo {
+    width: 50px; /* Set your desired width */
+    height: 50px; /* Set your desired height */
+  }
+</style>
+
+  <section id="job-opening">
+    <div class="container">
+      <div class="row">
+        <!-- Job Opening Description (md-6) -->
+        <div class="col-md-6">
+          <h2 style="text-decoration: underline; color: orange; text-align: center;">CAREERS</h2>
+          <p style="margin-top: 50px;">Join Our Team! If you are passionate, talented, and looking for an exciting career opportunity, we invite you to join our team. Discover the possibilities of working with us and contribute to our mission of delivering exceptional results for our clientele. Explore our current openings, submit your application, and take the first step towards an enriching and fulfilling career with us!</p>
+          
+          <p style="margin-top: 50px;">Discover the possibilities of working with us and contribute to our mission of delivering exceptional results for our clientele. Explore our current openings, submit your application, and take the first step towards an enriching and fulfilling career with us!</p>
+        </div>
+        <!-- Job Opening Image (md-6) -->
+        <div class="col-md-6">
+          <img src="{% static 'dis.jpg' %}" alt="Job Opening Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="qualifications" style="margin-top: 70px;">
+    <div class="col-md-12">
+      <h2 style="text-align: center;">Desired Qualities</h2>
+      <ul class="list-unstyled d-flex justify-content-between">
+        <li>
+          <img src="{% static 'adapt.png' %}" alt="Logo 1" class="img-fluid equal-size-logo">
+          <span class="ml-2">Adaptability</span>
+        </li>
+        <li>
+          <img src="{% static 'customer.png' %}" alt="Logo 2" class="img-fluid equal-size-logo">
+          <span class="ml-2">Customer-First mentality</span>
+        </li>
+        <li>
+          <img src="{% static 'motivated.png' %}" alt="Logo 3" class="img-fluid equal-size-logo">
+          <span class="ml-2">Self-motivated</span>
+        </li>
+        <li>
+          <img src="{% static 'attitude.png' %}" alt="Logo 4" class="img-fluid equal-size-logo">
+          <span class="ml-2">A great attitude</span>
+        </li>
+        <li>
+          <img src="{% static 'creative.png' %}" alt="Logo 5" class="img-fluid equal-size-logo">
+          <span class="ml-2">Creative and innovative</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="view-and-apply" style="margin-top: 70px;">
+    <div class="container">
+      <div class="row">
+        <!-- View and Apply Section (md-12) -->
+        <div class="col-md-12">
+          <h5 style="text-align: center; text-decoration: underline; color: orange">Current Openings</h5>
+          <p>If you meet the qualifications and are interested in joining our team, click the button below to view the full job description and apply.</p>
+          <a href="#" class="btn btn-outline-info btn-sm">View and Apply</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

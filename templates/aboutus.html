@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | CHLOE{% endblock %}
+
+{% block content %}
+  <header style="background: url('{% static 'abt.jpg' %}') center center/cover no-repeat; height: 500px; position: relative; z-index: 1;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">      
+    </div>
+  </header>
+
+  <section id="awho-we-are" style="margin-top:20px; ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        <!-- Image for Areas of Service -->
+          <img src="{% static 'window.jpg' %}" alt="Areas of Service Image" class="img-fluid">
+        </div>
+
+        <div class="col-md-6 text-red">
+          <div id="who-we-are" class="mt-4">
+            <h3>Who We Are</h3>
+            <p>Embark on a journey with Chloe Cleaners and get to know the heart and soul behind our commitment to excellence. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna id tellus ultricies aliquet. As a leading provider of cleaning services, Chloe Cleaners is more than just a company – we are a team of passionate individuals dedicated to transforming spaces and elevating the standards of cleanliness.</p>
+
+            <p>Founded on principles of integrity and customer satisfaction, Chloe Cleaners takes pride in its professional approach to cleaning. Our experienced team is driven by a shared vision to create environments that not only meet but exceed expectations. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna id tellus ultricies aliquet. From offices and commercial establishments to residential spaces, our comprehensive range of services reflects our commitment to delivering outstanding results.</p>
+
+            <p>At Chloe Cleaners, we understand that each space is unique, requiring a tailored approach to cleaning. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed urna id tellus ultricies aliquet. Our attention to detail, use of advanced techniques, and eco-friendly cleaning agents set us apart, ensuring a clean and healthy environment for our clients. Join us as we continue to redefine the cleaning industry, one immaculate space at a time.</p>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <section id="about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-red">
+          <!-- Board of Directors Section -->
+          <div id="board-of-directors" class="mt-4">
+            <h3>Board of Directors</h3>
+            {% for aboutus in aboutuss %}
+              {% if aboutus.name and aboutus.content %}
+                <div class="aboutus">
+                  <h4>{{ aboutus.name }}</h4>
+                  {% if aboutus.profile_image %}
+                    <img src="{{ aboutus.profile_image.url }}" alt="{{ aboutus.name }} Profile Image">
+                  {% else %}
+                    <img src="{% static 'images/default_profile_image.jpg' %}" alt="Default Profile Image">
+                  {% endif %}
+                  <p>{{ aboutus.content }}</p>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  </section>
+  <hr>
+
+  <section id="areas-of-service">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-red">
+          <!-- Areas of Service Delivery Section -->
+          <h3>Areas of Service Delivery</h3>
+          <p>Explore the diverse range of services offered by Chloe Cleaners as we deliver top-notch solutions tailored to meet your specific needs. From professional carpet care and meticulous restroom cleaning to comprehensive exterior cleaning services, our team is dedicated to elevating the cleanliness and aesthetic appeal of your spaces. With a commitment to excellence, we employ industry-leading techniques, quality products, and a keen eye for detail to ensure exceptional results.</p>
+
+          <p>At Chloe Cleaners, we understand the importance of maintaining a clean and inviting environment. Our services extend to general office cleaning, specialized floor care, and furniture care services, contributing to the overall well-being of your commercial or residential space. Partner with us to experience the art of cleaning, where professionalism meets a passion for creating cleaner, healthier, and more beautiful spaces for our valued clientele.</p>
+        </div>
+
+        <div class="col-md-6">
+          <!-- Image for Areas of Service -->
+          <img src="{% static 'flo.jpg' %}" alt="Areas of Service Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+{% endblock %}

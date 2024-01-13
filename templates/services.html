@@ -1,0 +1,310 @@
+<!-- cleaning_company/templates/cleaning_company/services.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Services | CHLOE{% endblock %}
+{% load static %}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Static Sidebar -->
+     <nav class="col-md-2 d-none d-md-block bg-light sidebar">      
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link btn active" href="#general-details" onclick="showService('general_details')">
+                In a Nutshell
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#commercial-cleaning" onclick="showService('commercial_cleaning')">
+                Commercial Cleaning
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#carpet-cleaning" onclick="showService('carpet_cleaning')">
+                Carpet Cleaning
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#general-office-cleaning" onclick="showService('general_office_cleaning')">
+                General Office Cleaning
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#restroom-sanitation" onclick="showService('restroom_sanitation')">
+                Restroom Sanitation
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#floor-maintenance" onclick="showService('floor_maintenance')">
+                Floor Maintenance
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#furniture-cleaning" onclick="showService('furniture_cleaning')">
+                Furniture Cleaning
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#exterior-cleaning" onclick="showService('exterior_cleaning')">
+                Exterior Cleaning
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" href="#janitorial-supplies" onclick="showService('janitorial_supplies')">
+                Janitorial Supplies
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+      <!-- Main Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <!-- General Details -->
+        <div class="service-section" id="general_details">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Chloe Cleaners - Elevating Your Cleanliness Standards</h6>
+              <p style="margin-top: 20px;">Experience excellence with Chloe Cleaners! If you're seeking unparalleled cleaning services delivered with passion and expertise, look no further. Our dedicated team is committed to exceeding your expectations and contributing to the pristine appeal of your space. Explore our comprehensive range of services, meticulously designed to meet the unique needs of residential and commercial environments. Trust Chloe Cleaners for exceptional results that elevate your cleanliness standards to new heights!</p>
+
+              <p style="margin-top: 20px;">Your Space, Our Expertise! Chloe Cleaners invites you to discover the possibilities of a cleaner, healthier environment. Whether it's commercial, carpet, office, restroom, floor, furniture, exterior, or supplies services you require, we've got you covered. Our commitment to excellence shines through every service we offer. Contact Chloe Cleaners today to discuss how we can tailor our services to create a cleaner and more inviting atmosphere for your home or business.</p>
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'gen.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Commercial Cleaning -->
+        <div class="service-section" id="commercial_cleaning" style="display: none;">
+          <div class="container">
+            <div class="row">              
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Tailored Commercial Cleaning Solutions</h6>
+              <p style="margin-top: 20px;">Transform the cleanliness and atmosphere of your commercial space with Chloe Cleaners' tailored commercial cleaning solutions. Our dedicated team understands the diverse cleaning needs of businesses and crafts customized plans to address them effectively. Whether you operate a bustling office or a dynamic retail space, we bring precision and care to every cleaning project. With state-of-the-art equipment and environmentally friendly practices, Chloe Cleaners ensures a spotless and inviting environment for both your team and customers.</p>
+
+              <p style="margin-top: 20px;">Syiokimau's Trusted Commercial Cleaning Partner</p>
+              <p style="margin-top: 20px;">In the heart of Syiokimau, Chloe Cleaners stands as the trusted partner for commercial cleaning services. Our team, fueled by a commitment to excellence, brings unparalleled expertise to businesses in the area. From maintaining office hygiene to enhancing the cleanliness of retail establishments, we tailor our services to the unique demands of Syiokimau's diverse business landscape. Join forces with Chloe Cleaners, Syiokimau's leading provider of commercial cleaning services, and let us elevate the cleanliness and success of your business.</p>
+
+
+
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'com.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carpet Cleaning -->
+        <div class="service-section" id="carpet_cleaning" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Revitalize Your Carpets with Expert Care</h6>
+              <p style="margin-top: 20px;">Discover the transformative power of expert carpet care at Chloe Cleaners. Our professional carpet services go beyond conventional cleaning, offering a holistic approach to revitalize your carpets. Whether you need deep cleaning, stain removal, or restoration, our skilled team employs industry-leading techniques and eco-friendly products to ensure your carpets look as good as new. Trust us to not only enhance the visual appeal of your space but also contribute to a healthier indoor environment. Elevate your carpets with Chloe Cleaners for a touch of luxury and cleanliness like never before.</p>
+
+              <p style="margin-top: 20px;">Chloe Cleaners: Setting the Standard for Carpet Excellence</p>
+              <p style="margin-top: 20px;">Experience unparalleled excellence in carpet care with Chloe Cleaners. Our dedicated team is committed to setting the standard for the industry by providing exceptional carpet services. If you're passionate about creating cleaner, healthier, and more beautiful spaces, Chloe Cleaners is your ideal partner for carpet care needs. From residential to commercial settings, our comprehensive carpet services are designed to enhance longevity and aesthetic appeal. Contact us today to explore how Chloe Cleaners can contribute to the overall well-being and beauty of your home or business through our top-tier carpet services.</p>
+
+
+
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'vac.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- General Office Cleaning -->
+        <div class="service-section" id="general_office_cleaning" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Tailored Office Cleaning for Productivity</h6>
+              <p style="margin-top: 20px;">Boost the cleanliness and productivity of your office space with Chloe Cleaners' tailored office cleaning services. We specialize in meticulous cleaning solutions tailored to the unique needs of general office areas. Our dedicated team ensures every nook and cranny is spotless, fostering a conducive and hygienic working environment. From routine cleaning to specialized services, Chloe Cleaners is committed to delivering exceptional results that go beyond cleanliness — we contribute to an environment that inspires productivity and success.</p>
+
+              <p style="margin-top: 20px;">Chloe Cleaners: Your Partner for Professional Office Spaces</p>
+              <p style="margin-top: 20px;">In your quest to elevate the professionalism and organization of your office spaces, Chloe Cleaners stands out as the dedicated partner you need. Our team is committed to providing outstanding office cleaning services, enhancing the well-being of our clients and creating inviting workspaces. If you're seeking a reliable partner to ensure a clean and organized environment for your business, Chloe Cleaners is here for you. Explore our comprehensive office cleaning solutions, tailor-made to meet the unique needs of your workspace. Contact us today, and let's discuss how Chloe Cleaners can contribute to the cleanliness and positive atmosphere of your office.</p>
+
+
+
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'commercial.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Restroom Sanitation -->
+        <div class="service-section" id="restroom_sanitation" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Comprehensive Restroom Hygiene Solutions</h6>
+              <p style="margin-top: 20px;">Elevate the hygiene and cleanliness of your facilities with Chloe Cleaners' comprehensive restroom hygiene solutions. Specializing in thorough and effective cleaning, we ensure your restrooms remain spotless and inviting. Our dedicated team employs industry-leading techniques and high-quality disinfectants, creating a sanitary environment for both employees and visitors. At Chloe Cleaners, we go beyond the conventional to set the standard for restroom cleanliness in your business or organization, ensuring a fresh and pleasant experience for everyone.</p>
+
+              <p style="margin-top: 20px;">Chloe Cleaners: Your Partner for Pristine Restrooms</p>
+              <p style="margin-top: 20px;">Experience excellence in maintaining clean and hygienic restroom facilities with Chloe Cleaners as your trusted partner. Our dedicated team is committed to providing outstanding restroom cleaning services, contributing to a positive and healthy experience for our clients and their guests. Chloe Cleaners is the ideal partner for businesses seeking to ensure pristine and sanitized restrooms. Explore our comprehensive restroom cleaning solutions, crafted with a keen eye for detail. Contact us today to discuss how Chloe Cleaners can enhance the cleanliness and comfort of your restroom facilities, setting a new standard for excellence.</p>
+
+
+
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'rest.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floor Maintenance -->
+        <div class="service-section" id="floor_maintenance" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Customized Floor Care for Lasting Impressions</h6>
+              <p style="margin-top: 20px;">Elevate the appearance and longevity of your floors with Chloe Cleaners' customized floor care services. We specialize in delivering comprehensive solutions for all types of flooring, ensuring they remain pristine and well-maintained. Our skilled team, armed with advanced techniques and quality products, pays meticulous attention to detail to provide exceptional results. From routine maintenance to specialized treatments, Chloe Cleaners goes beyond the ordinary, leaving a lasting impression on clients and visitors alike. Trust us to enhance the aesthetic appeal and durability of your floors, making them a standout feature in your space.</p>
+
+              <p style="margin-top: 20px;">Chloe Cleaners: Crafting Inviting and Impressive Spaces</p>
+              <p style="margin-top: 20px;">Experience the art of floor care and maintenance with Chloe Cleaners as your dedicated partner. Our team is committed to delivering exceptional floor care services, creating inviting and impressive spaces for our valued clientele. If you're seeking a partner to elevate the cleanliness and aesthetic appeal of your floors, Chloe Cleaners is your ideal choice. Explore our comprehensive floor care solutions, designed with a steadfast commitment to excellence. Contact us today to discuss how Chloe Cleaners can contribute to the longevity and beauty of your floors, ensuring they remain a stunning feature in your space.</p>
+
+
+
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'flo.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Furniture Cleaning -->
+        <div class="service-section" id="furniture_cleaning" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Tailored Furniture Care for Lasting Elegance</h6>
+              <p style="margin-top: 20px;">Revitalize and preserve the beauty of your furniture with Chloe Cleaners' tailored furniture care services. We specialize in delivering meticulous care and restoration solutions for all types of furnishings, ensuring they remain in pristine condition. Our dedicated team, armed with industry-leading techniques and premium products, is committed to providing exceptional results. Whether it's routine maintenance, repair, or restoration, Chloe Cleaners goes the extra mile to enhance the aesthetic appeal and longevity of your furniture. Trust us to create inviting and comfortable spaces for your clients and guests, ensuring your furniture exudes lasting elegance.</p>
+
+              <p style="margin-top: 20px;">Chloe Cleaners: Preserving the Charm of Your Furnishings</p>
+              <p style="margin-top: 20px;">Experience the art of furniture care and restoration with Chloe Cleaners as your dedicated partner. Our team is committed to delivering exceptional furniture care services, ensuring the longevity and beauty of our clients' valuable furnishings. If you're seeking a partner to revitalize and preserve the charm of your furniture, Chloe Cleaners is here for you. Explore our comprehensive furniture care solutions, designed with a steadfast commitment to excellence. Contact us today to discuss how Chloe Cleaners can contribute to the lasting beauty and functionality of your cherished furnishings, creating spaces that reflect timeless elegance.</p>
+
+
+
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'fur.JPG' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exterior Cleaning -->
+        <div class="service-section" id="exterior_cleaning" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Tailored Exterior Cleaning for Lasting Impressions</h6>
+              <p style="margin-top: 20px;">Transform the curb appeal of your property with Chloe Cleaners' tailored exterior cleaning services. We specialize in delivering thorough and effective solutions to keep the exterior of your building looking pristine. Our skilled team, armed with advanced cleaning techniques, high-quality equipment, and eco-friendly products, is dedicated to ensuring exceptional results. From precise pressure washing to spotless window cleaning, Chloe Cleaners goes the extra mile to enhance the visual appeal and overall cleanliness of your property's exterior. Trust us to create lasting positive impressions on clients and visitors, ensuring your property stands out with unmatched charm and cleanliness.</p>
+
+              <p style="margin-top: 20px;">Chloe Cleaners: Elevating Exterior Beauty</p>
+              <p style="margin-top: 20px;">Experience excellence in maintaining the exterior beauty of properties with Chloe Cleaners as your dedicated partner. Our team is committed to providing outstanding exterior cleaning services, contributing to the aesthetic charm and cleanliness of our clients' properties. Chloe Cleaners is the ideal partner for property owners seeking to ensure a pristine and well-maintained exterior. Explore our comprehensive exterior cleaning solutions, crafted with talent and dedication to enhance your property's visual appeal. Contact us today to discuss how Chloe Cleaners can make a difference in the cleanliness and attractiveness of your property's exterior.</p>
+
+
+
+              </div>
+              <!-- Job Opening Image (md-6) -->
+              <div class="col-md-6">
+                <img src="{% static 'window.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Janitorial Supplies -->
+        <div class="service-section" id="janitorial_supplies" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <!-- Job Opening Description (md-6) -->
+              <div class="col-md-6">
+              <h6 style="color: orange; text-align: center;">Premium Cleaning Supplies for Effective Solutions</h6>
+              <p style="margin-top: 20px;">Empower your cleaning routine with Chloe Cleaners' premium cleaning supplies services. We specialize in providing high-quality, eco-friendly cleaning supplies essential for maintaining a clean and healthy environment. Our commitment to delivering exceptional results extends beyond our services to the products we offer. Explore our diverse range of cleaning supplies, including environmentally conscious options, meticulously designed to meet the unique needs of residential and commercial spaces. Chloe Cleaners is your trusted partner for top-notch tools, ensuring effective and sustainable cleaning solutions that elevate the cleanliness of your spaces to new heights.</p>
+
+              <p style="margin-top: 20px;">Chloe Cleaners: Your Partner for Exceptional Cleaning Supplies</p>
+              <p style="margin-top: 20px;">Elevate your cleaning routine with top-notch supplies from Chloe Cleaners. We are actively seeking individuals with a dedication to excellence to join our team in providing exceptional cleaning supplies services. If you're passionate about supporting cleanliness and well-being, consider partnering with us. Chloe Cleaners offers a comprehensive range of offerings, meticulously designed to contribute to the success and cleanliness of our clients' spaces. Contact us today to discuss how our high-quality cleaning supplies can enhance your cleaning efforts, creating a healthier environment and setting a new standard for excellence.</p>
+
+
+
+              </div>             
+              <div class="col-md-6">
+                <img src="{% static 'jun.jpg' %}" alt="Job Opening Image" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add other service sections as needed -->
+      </main>
+    </div>
+  </div>
+
+  <script>
+    function showService(serviceId) {
+      // Hide all service sections
+      hideAllSections();
+
+      // Show the selected service section
+      showSection(serviceId);
+    }
+
+    // Function to hide all service sections
+    function hideAllSections() {
+      var serviceSections = document.querySelectorAll('.service-section');
+      serviceSections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+    }
+
+    // Function to show a specific service section
+    function showSection(sectionId) {
+      var targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.style.display = 'block';
+      }
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+{% endblock %}

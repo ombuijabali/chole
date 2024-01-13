@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ blog_item.title }}{% endblock %}
+
+{% block content %}
+  <section id="blog-detail" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <article class="mb-5">
+            <img src="{{ blog_item.photo.url }}" alt="{{ blog_item.title }}" class="img-fluid mb-3">
+            <h2 class="display-4" style="font-weight: bolder;">{{ blog_item.title }}</h2>
+            <p class="blog-meta text-muted">Posted by <span class="author font-weight-bold">{{ blog_item.author.username }}</span> on <span class="date">{{ blog_item.date_posted|date:"F d, Y" }}</span></p>
+            <p class="lead">{{ blog_item.content }}</p>
+            <p>{{ blog_item.details }}</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <a href="{% url 'blogs' %}" class="btn btn-danger mb-3">Back to Blogs</a>
+          <h3 class="mt-5 mb-3">Comments:</h3>
+          {% for comment in blog_item.comment_set.all %}
+            <div class="comment mb-4">
+              <p class="comment-meta text-muted mb-1">Comment by <span class="author font-weight-bold">{{ comment.author.username }}</span> on <span class="date">{{ comment.date_commented|date:"F d, Y" }}</span></p>
+              <p>{{ comment.text }}</p>
+            </div>
+          {% endfor %}
+
+          <form method="post" action="{% url 'add_comment' blog_item.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="comment" class="font-weight-bold">Add your comment:</label>
+              <textarea name="comment" id="comment" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-info">Submit Comment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

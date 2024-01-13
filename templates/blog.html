@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blog | CHLOE{% endblock %}
+
+{% block content %}
+<style>
+  /* Your existing styles here */
+
+  #blogs .blog-image {
+    width: 100%;
+    height: 200px; /* Set a fixed height for consistent sizing */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  #blogs .blog-container {
+    height: 350px; /* Set a fixed height for title, snippet, and link container */
+  }
+
+  #blogs .blog-title {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+  }
+
+  #blogs .blog-snippet {
+    line-height: 1.6;
+    overflow: hidden;
+    max-height: 120px; /* Adjust the maximum height as needed */
+    transition: max-height 0.3s ease-out;
+  }
+
+  #blogs .blog-details {
+    display: none;
+  }
+
+  #blogs .read-more {
+    display: inline-block;
+    color: #27ae60; /* Green color for read more link */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  #blogs .read-more:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<section id="blogs" class="py-5">
+  <div class="container">
+    <div class="row">
+      {% for blog_item in blogs_list %}
+        <div class="col-md-4 mb-5">
+          <article class="blog-container">
+            <img src="{{ blog_item.photo.url }}" alt="{{ blog_item.title }}" class="img-fluid mb-3 blog-image">
+            <h3 class="blog-title">{{ blog_item.title }}</h3>
+            <p class="blog-snippet">{{ blog_item.details }}</p>
+            <p class="blog-details">{{ blog_item.content }}</p>
+            <a href="{% url 'blog_detail' blog_item.id %}" class="read-more">Read more</a>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleReadMore(button) {
+    var blogDetails = button.previousElementSibling.previousElementSibling;
+    blogDetails.style.display = blogDetails.style.display === 'none' ? 'block' : 'none';
+    button.innerText = button.innerText === 'Read more' ? 'Read less' : 'Read more';
+  }
+</script>
+{% endblock %}
